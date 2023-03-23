@@ -2,6 +2,7 @@
     padding: 0;
     cursor: none;
     font-family: arial;
+    overscroll-behavior: none;
     }
 
     body{
