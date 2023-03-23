@@ -5,7 +5,6 @@ let LABEL_TEXT = 'das eigentliche und das uneigentliche'
 const clock = new THREE.Clock()
 const scene = new THREE.Scene()
 
-scene.
 
 const restartAnimButton = document.getElementById('restart-anim')
 
