@@ -92,6 +92,7 @@ const texture = new THREE.TextureLoader().load('https://upload.wikimedia.org/wik
 
 const textureMaus = new THREE.TextureLoader().load('https://cursor.in/assets/cursor.svg', renderer)
 const textureHand = new THREE.TextureLoader().load('https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg', renderer)
+const textureHead = new THREE.TextureLoader().load('assets/nick_kopf.png', renderer)
 
 
 texture.repeat.set(0.7, 0.7)
@@ -224,6 +225,11 @@ function onAnimLoop() {
     }
   }
 */
+
+  document.querySelector(".text").addEventListener("mouseenter", (e)=>{
+    mesh.material.map = textureHead
+  })
+
   document.querySelector(".mail").addEventListener("mouseenter", (e)=>{
     mesh.material.map = textureHand
   })
