@@ -94,9 +94,7 @@ const texture = new THREE.TextureLoader().load('https://upload.wikimedia.org/wik
 const textureMaus = new THREE.TextureLoader().load('https://cursor.in/assets/cursor.svg', renderer)
 const textureHand = new THREE.TextureLoader().load('https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg', renderer)
 
-      
-const video = document.getElementById( 'video' );
-const videoTexture = new THREE.VideoTexture( video )
+
 texture.repeat.set(0.7, 0.7)
 texture.offset.set(0.15, 0.15)
 
