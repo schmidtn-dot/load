@@ -1,0 +1,38 @@
+* { margin: 0; padding: 0;
+    background: darkgrey;
+      cursor: none;
+      font-family: arial;
+    }
+    
+    #restart-anim {
+      display: none;
+      position: fixed;
+      bottom: 1rem;
+      left: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      background: rgba(255, 255, 255, 0.86);
+      cursor: pointer;
+    }
+    video{
+      display:none
+    }
+    
+    .main{
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      background: none;}
+    
+    .main h2{
+      background: none;
+      color: #fff;
+      padding: 20px;
+      font-weight: normal;
+    }
+    
+    .mail{
+      position: absolute;
+      bottom: 20px
+    }
