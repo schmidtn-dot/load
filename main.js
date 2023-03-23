@@ -27,7 +27,7 @@ let renderBufferB = new THREE.WebGLRenderTarget(
 // 3. Append it to the page
 const renderer = new THREE.WebGLRenderer()
 renderer.setClearColor(0xff0000)
-renderer.setClearAlpha(1)
+renderer.setClearAlpha(0)
 renderer.setSize(innerWidth, innerHeight)
 renderer.setPixelRatio(devicePixelRatio || 1)
 document.body.appendChild(renderer.domElement)
@@ -145,7 +145,7 @@ const postFXMaterial = new THREE.ShaderMaterial({
         gl_FragColor = vec4(inputColor * .999);
       }
     `,
-    transparent: false
+    transparent: true
 })
 const postFXMesh = new THREE.Mesh(postFXGeometry, postFXMaterial)
 postFXScene.add(postFXMesh)
