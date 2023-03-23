@@ -6,7 +6,7 @@
     }
 
     body{
-        background: darkgrey;
+        background: #000;
         position: fixed;
         overflow: hidden;
     }
