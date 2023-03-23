@@ -7,6 +7,8 @@
 
     body{
         background: darkgrey;
+        position: fixed;
+        overflow: hidden;
     }
     
     #restart-anim {
