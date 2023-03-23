@@ -5,7 +5,7 @@ let LABEL_TEXT = 'das eigentliche und das uneigentliche'
 const clock = new THREE.Clock()
 const scene = new THREE.Scene()
 
-
+scene.
 
 const restartAnimButton = document.getElementById('restart-anim')
 
@@ -145,7 +145,7 @@ const postFXMaterial = new THREE.ShaderMaterial({
         gl_FragColor = vec4(inputColor * .999);
       }
     `,
-    transparent: true
+    transparent: false
 })
 const postFXMesh = new THREE.Mesh(postFXGeometry, postFXMaterial)
 postFXScene.add(postFXMesh)
