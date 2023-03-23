@@ -177,9 +177,11 @@ function maus(){
     mesh.position.x = e.x - window.innerWidth/2
   })
   
+ 
     document.addEventListener('touchmove', (e) => {
     console.log(e.y, e.x)
-     
+    e.preventDefault();
+
     mesh.position.y = window.innerHeight/2 - e.touches[0].clientY
     mesh.position.x = e.touches[0].clientX - window.innerWidth/2
   })
