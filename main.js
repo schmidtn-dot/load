@@ -335,7 +335,7 @@ function onAnimLoop() {
   mesh.rotation.z -= 0.1
   number = 0
  // mesh.position.y += 80
-  time += 0.1
+  time += 0.01
   postFXMesh.material.uniforms.time.value = time
 
 
