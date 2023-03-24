@@ -130,7 +130,7 @@ const postFXMaterial = new THREE.ShaderMaterial({
 
       void main () {
         // Set the correct position of each plane vertex
-        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 0.995);
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 0.9975);
 
         // Pass in the correct UVs to the fragment shader
         v_uv = uv;
@@ -227,10 +227,10 @@ const postFXMaterial = new THREE.ShaderMaterial({
         //vec4 inputColor = texture2D(sampler, v_uv + vec2(.00));
           float a = snoise(vec3(v_uv * 5.1, time * 0.1)) * 0.0032;
         float b = snoise(vec3(v_uv * 5.1, time * 0.1 + 100.0)) * 0.0032;
-        vec4 inputColor = texture2D(sampler, v_uv + vec2(a * .045, b * .045) + vec2(0.0));
+        vec4 inputColor = texture2D(sampler, v_uv + vec2(a * .07, b * .07) + vec2(0.0));
       
         // Set the correct color of each pixel that makes up the plane
-        gl_FragColor = vec4(inputColor * 0.995);
+        gl_FragColor = vec4(inputColor * 0.998);
       }
     `,
     transparent: false
