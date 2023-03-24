@@ -286,6 +286,7 @@ function updateMesh(){
   number += (scroll*0.00028)
 }
 
+let time = 0.05
 let pos = 0
 let scroll = 0
 let scrollTarget = 0
@@ -334,6 +335,7 @@ function onAnimLoop() {
   mesh.rotation.z -= 0.1
   number = 0
  // mesh.position.y += 80
+ time += 0.01
 
   labelMesh.material.color.r = number 
   labelMesh.material.color.b = number
