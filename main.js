@@ -314,13 +314,9 @@ function onAnimLoop() {
   }
 */
 
-  document.querySelector(".text").addEventListener("mouseenter", (e)=>{
-    mesh.material.map = textureHead
-  })
 
-  document.querySelector(".text").addEventListener("touchstart", (e)=>{
-    mesh.material.map = textureHead
-  })
+
+
 
   document.querySelector(".mail").addEventListener("mouseenter", (e)=>{
     mesh.material.map = textureHand
