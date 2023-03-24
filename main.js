@@ -336,7 +336,7 @@ function onAnimLoop() {
   number = 0
  // mesh.position.y += 80
   time += 0.1
-  //postFXMesh.material.uniforms.time.value = time
+  postFXMesh.material.uniforms.time.value = time
 
 
   labelMesh.material.color.r = number 
