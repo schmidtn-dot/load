@@ -230,7 +230,7 @@ const postFXMaterial = new THREE.ShaderMaterial({
         vec4 inputColor = texture2D(sampler, v_uv + vec2(a * 0.05, b * 0.05) + vec2(0.0));
       
         // Set the correct color of each pixel that makes up the plane
-        gl_FragColor = vec4(inputColor * 0.998);
+        gl_FragColor = vec4(inputColor * 1.0);
       }
     `,
     transparent: false
