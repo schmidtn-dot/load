@@ -118,19 +118,26 @@ const postFXMaterial = new THREE.ShaderMaterial({
   uniforms: {
     sampler: { value: null },
     progress: { value: 0.99},
-    time : {value: 0}
+    rate: {value: 0.998},
+    time : {value: 0},
+    rotationTime: {value: 0.00001},
   },
   // vertex shader will be in charge of positioning our plane correctly
   vertexShader: `
       varying vec2 v_uv;
       uniform float progress;
       uniform float time;
+      uniform float rate;
+      uniform float rotationTime;
 
 
 
       void main () {
         // Set the correct position of each plane vertex
-        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 0.998);
+        //gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 0.998);
+
+        //Set position with Rotation
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, rate) * mat4(cos(time*rotationTime), -sin(time*rotationTime), 0.0, 0.0, sin(time*rotationTime), cos(time*rotationTime), 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0);
 
         // Pass in the correct UVs to the fragment shader
         v_uv = uv;
