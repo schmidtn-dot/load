@@ -120,7 +120,7 @@ const postFXMaterial = new THREE.ShaderMaterial({
     progress: { value: 0.99},
     rate: {value: 0.998},
     time : {value: 0},
-    rotationTime: {value: 0.00001},
+    rotationTime: {value: 0.00001}
   },
   // vertex shader will be in charge of positioning our plane correctly
   vertexShader: `
@@ -134,9 +134,8 @@ const postFXMaterial = new THREE.ShaderMaterial({
 
       void main () {
         // Set the correct position of each plane vertex
-        //gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 0.998);
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 0.998);
 
-        //Set position with Rotation
         gl_Position = projectionMatrix * modelViewMatrix * vec4(position, rate) * mat4(cos(time*rotationTime), -sin(time*rotationTime), 0.0, 0.0, sin(time*rotationTime), cos(time*rotationTime), 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0);
 
         // Pass in the correct UVs to the fragment shader
@@ -294,12 +293,12 @@ function maus(){
     if(e.touches[0].clientX  > left && e.touches[0].clientX  < right && e.touches[0].clientY > top && e.touches[0].clientY < bottom) {
       // Mousemove element is inside the coordinates
       mesh.material.map = textureHand
-      //postFXMesh.material.uniforms.rate.value = 1.005
-      //postFXMesh.material.uniforms.rotationTime.value = 0.0005
+      postFXMesh.material.uniforms.rate.value = 1.005
+      postFXMesh.material.uniforms.rotationTime.value = 0.0005
     } else {
       mesh.material.map = texture
-      //postFXMesh.material.uniforms.rate.value = 0.997
-      //postFXMesh.material.uniforms.rotationTime.value = 0.00001}
+      postFXMesh.material.uniforms.rate.value = 0.997
+      postFXMesh.material.uniforms.rotationTime.value = 0.00001
     }
     })
  
