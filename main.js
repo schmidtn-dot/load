@@ -270,6 +270,27 @@ function maus(){
     console.log(e.y, e.x)
     mesh.position.y = window.innerHeight/2 - e.y
     mesh.position.x = e.x - window.innerWidth/2
+
+    //GET MAIL CORDINATES
+    const mail = document.querySelector(".mail")
+
+    let position = mail.getBoundingClientRect();  
+    let top = position.top; 
+    let left = position.left; 
+    let right = position.right; 
+    let bottom = position.bottom;
+    
+    if(e.x  > left && e.x < right && e.y > top && e.y < bottom) {
+      // Mousemove element is inside the coordinates
+      mesh.material.map = textureHand
+      postFXMesh.material.uniforms.rate.value = 1.005
+      postFXMesh.material.uniforms.rotationTime.value = -0.003
+    } else {
+      mesh.material.map = texture
+      postFXMesh.material.uniforms.rate.value = 0.997
+      postFXMesh.material.uniforms.rotationTime.value = 0.002
+    }
+
   })
   
  
@@ -347,7 +368,7 @@ function onAnimLoop() {
 
 
 
-
+/*
   document.querySelector(".mail").addEventListener("mouseenter", (e)=>{
     mesh.material.map = textureHand
   })
@@ -355,6 +376,7 @@ function onAnimLoop() {
     document.querySelector(".mail").addEventListener("mouseleave", (e)=>{
     mesh.material.map = texture
   })
+  */
   
    document.addEventListener("click", (e)=>{
      mesh.material.map == textureMaus ? (mesh.material.map = texture) :
