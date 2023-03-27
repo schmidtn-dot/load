@@ -294,7 +294,7 @@ function maus(){
       // Mousemove element is inside the coordinates
       mesh.material.map = textureHand
       postFXMesh.material.uniforms.rate.value = 1.005
-      postFXMesh.material.uniforms.rotationTime.value = -0.001
+      postFXMesh.material.uniforms.rotationTime.value = -0.003
     } else {
       mesh.material.map = texture
       postFXMesh.material.uniforms.rate.value = 0.997
