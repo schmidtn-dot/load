@@ -136,7 +136,7 @@ const postFXMaterial = new THREE.ShaderMaterial({
         // Set the correct position of each plane vertex
         //gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 0.998);
 
-        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, rate) * mat4(cos(time*rotationTime), -sin(time*rotationTime), 0.0, 0.0, sin(time*rotationTime), cos(time*rotationTime), 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0);
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, rate) * mat4(cos(rotationTime), -sin(rotationTime), 0.0, 0.0, sin(rotationTime), cos(rotationTime), 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0);
 
         // Pass in the correct UVs to the fragment shader
         v_uv = uv;
