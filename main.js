@@ -120,7 +120,7 @@ const postFXMaterial = new THREE.ShaderMaterial({
     progress: { value: 0.99},
     rate: {value: 0.998},
     time : {value: 0},
-    rotationTime: {value: 0.01}
+    rotationTime: {value: 0.001}
   },
   // vertex shader will be in charge of positioning our plane correctly
   vertexShader: `
@@ -294,11 +294,11 @@ function maus(){
       // Mousemove element is inside the coordinates
       mesh.material.map = textureHand
       postFXMesh.material.uniforms.rate.value = 1.005
-      postFXMesh.material.uniforms.rotationTime.value = 0.0005
+      postFXMesh.material.uniforms.rotationTime.value = -0.001
     } else {
       mesh.material.map = texture
       postFXMesh.material.uniforms.rate.value = 0.997
-      postFXMesh.material.uniforms.rotationTime.value = 0.00001
+      postFXMesh.material.uniforms.rotationTime.value = 0.001
     }
     })
   }
