@@ -120,7 +120,7 @@ const postFXMaterial = new THREE.ShaderMaterial({
     progress: { value: 0.99},
     rate: {value: 0.998},
     time : {value: 0},
-    rotationTime: {value: 0.00001}
+    rotationTime: {value: 0.01}
   },
   // vertex shader will be in charge of positioning our plane correctly
   vertexShader: `
