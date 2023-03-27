@@ -298,7 +298,7 @@ function maus(){
     } else {
       mesh.material.map = texture
       postFXMesh.material.uniforms.rate.value = 0.997
-      postFXMesh.material.uniforms.rotationTime.value = 0.001
+      postFXMesh.material.uniforms.rotationTime.value = 0.002
     }
     })
   }
