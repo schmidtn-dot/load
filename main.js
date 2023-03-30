@@ -419,9 +419,8 @@ function onAnimLoop() {
     });
   }
 
-  document.querySelector("#accelPermsButton").addEventListener("click", (e)=>{
     getAccel()
-  })
+  
 
   /*
   if(down){
