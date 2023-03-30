@@ -413,7 +413,6 @@ function onAnimLoop() {
   
   //move letter
   updateMesh()
-  orient()
   /*
   if(down){
     number -= 0.01  
