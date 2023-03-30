@@ -384,6 +384,7 @@ function maus(){
         //document.querySelector(".number-text").innerText = "x: " + x + " y: " + y
         postFXMesh.material.uniforms.orientationX.value = x
         postFXMesh.material.uniforms.orientationX.value = y
+        document.querySelector(".text").innerText = "x: " + x
     });
   }
 
@@ -406,7 +407,6 @@ let currentScroll = 0
     let number = 0
     let down = false
 function onAnimLoop() {
-  document.querySelector(".text").innerText = "x: " + time
 
   scroll += (scrollTarget - scroll) * 0.1
   scroll *= 0.9
@@ -416,7 +416,37 @@ function onAnimLoop() {
   //move letter
   updateMesh()
 
-    orient()
+  window.addEventListener('deviceorientation',(event) => {
+    // Expose each orientation angle in a more readable way
+    rotation_degrees = event.alpha;
+    frontToBack_degrees = event.beta;
+    leftToRight_degrees = event.gamma;
+    
+    // Update velocity according to how tilted the phone is
+    // Since phones are narrower than they are long, double the increase to the x velocity
+    vx = vx + leftToRight_degrees * updateRate*2; 
+    vy = vy + frontToBack_degrees * updateRate;
+    
+    // Update position and clip it to bounds
+    px = px + vx*.5;
+    if (px > 98 || px < 0){ 
+        px = Math.max(0, Math.min(98, px)) // Clip px between 0-98
+        vx = 0;
+    }
+
+    py = py + vy*.5;
+    if (py > 98 || py < 0){
+        py = Math.max(0, Math.min(98, py)) // Clip py between 0-98
+        vy = 0;
+    }
+    
+    let x = ((px / window.innerWidth) * 2 - 1)
+    let y = ((1 - py / window.innerHeight) * 2 - 1) 
+    //document.querySelector(".number-text").innerText = "x: " + x + " y: " + y
+    postFXMesh.material.uniforms.orientationX.value = x
+    postFXMesh.material.uniforms.orientationX.value = y
+    document.querySelector(".text").innerText = "x: " + x
+});
 
   /*
   if(down){
