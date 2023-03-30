@@ -316,7 +316,11 @@ function getAccel(){
             });
         }
     });
-}
+  }
+
+  document.querySelector("#accelPermsButton").addEventListener("click", (e)=>{
+    getAccel()
+  })
 
 function maus(){
   document.addEventListener('mousemove', (e) => {
