@@ -405,6 +405,7 @@ let currentScroll = 0
     let number = 0
     let down = false
 function onAnimLoop() {
+
   scroll += (scrollTarget - scroll) * 0.1
   scroll *= 0.9
   scrollTarget *= 0.9
@@ -412,6 +413,7 @@ function onAnimLoop() {
   
   //move letter
   updateMesh()
+  orient()
   /*
   if(down){
     number -= 0.01  
