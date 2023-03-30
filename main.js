@@ -354,7 +354,6 @@ function maus(){
 
   function orinet(){
     window.addEventListener('deviceorientation',(event) => {
-      orient(event)
         // Expose each orientation angle in a more readable way
         rotation_degrees = event.alpha;
         frontToBack_degrees = event.beta;
