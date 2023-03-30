@@ -278,12 +278,14 @@ var vx = 0.0; // Velocity x and y
 var vy = 0.0;
 var updateRate = 1/60; // Sensor refresh rate
 
+let orientPremission = false
+
 function getAccel(){
     DeviceMotionEvent.requestPermission().then(response => {
         if (response == 'granted') {
        // Add a listener to get smartphone orientation 
            // in the alpha-beta-gamma axes (units in degrees)
-           orient()
+           orientPremission = true
            
         }
     });
@@ -352,7 +354,7 @@ function maus(){
     })
   }
 
-  function orinet(){
+  function orient(){
     window.addEventListener('deviceorientation',(event) => {
         // Expose each orientation angle in a more readable way
         rotation_degrees = event.alpha;
@@ -413,6 +415,9 @@ function onAnimLoop() {
   
   //move letter
   updateMesh()
+  if(orientPremission){
+    orient()
+  }
   /*
   if(down){
     number -= 0.01  
