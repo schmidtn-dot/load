@@ -384,7 +384,6 @@ function maus(){
         //document.querySelector(".number-text").innerText = "x: " + x + " y: " + y
         postFXMesh.material.uniforms.orientationX.value = x
         postFXMesh.material.uniforms.orientationX.value = y
-        document.querySelector(".text").innerText = "x: " + x
     });
   }
 
@@ -407,6 +406,7 @@ let currentScroll = 0
     let number = 0
     let down = false
 function onAnimLoop() {
+  document.querySelector(".text").innerText = "x: " + time
 
   scroll += (scrollTarget - scroll) * 0.1
   scroll *= 0.9
