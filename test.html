@@ -53,7 +53,7 @@ function getAccel(){
                 dot = document.getElementsByClassName("indicatorDot")[0]
                 dot.setAttribute('style', "left:" + (px) + "%;" +
                                               "top:" + (py) + "%;");
-                
+                document.querySelector("number-text").innerText = event.alpha + " " + event.beta + " " + event.gamma
             });
         }
     });
@@ -66,6 +66,7 @@ function getAccel(){
 <body style="background-color:lightblue;">
 
 <div id="main">
+    <h1 class="number-text">number</h1>
     <button id="accelPermsButton" onclick="getAccel()" style="height:50px;">Get Accelerometer Permissions</button>
 
 
