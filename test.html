@@ -55,7 +55,7 @@ function getAccel(){
                                               "top:" + (py) + "%;");
 
                 let x = ((px / window.innerWidth) * 2 - 1)
-                let y = ((1 - e.py / window.innerHeight) * 2 - 1) 
+                let y = ((1 - py / window.innerHeight) * 2 - 1) 
                 document.querySelector(".number-text").innerText = "x: " + x + " y: " + y
             });
         }
