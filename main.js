@@ -341,41 +341,6 @@ function maus(){
     })
   }
 
-  
-
-  
-
-
-  //scrollEvent()
-maus()
-
-function updateMesh(){
-  pos += scroll*0.1
-  //labelMesh.position.y = pos % window.innerHeight - window.innerHeight/2 +100
-  //mesh.position.y = pos % window.innerHeight - window.innerHeight/2 +100
-  number += (scroll*0.00028)
-}
-
-let time = 0.05
-let pos = 0
-let scroll = 0
-let scrollTarget = 0
-let currentScroll = 0
-    let number = 0
-    let down = false
-function onAnimLoop() {
-
-  scroll += (scrollTarget - scroll) * 0.1
-  scroll *= 0.9
-  scrollTarget *= 0.9
-  currentScroll *= scroll * 0.01
-  
-  //move letter
-  updateMesh()
-
- 
-
-
   function getAccel(){
     DeviceMotionEvent.requestPermission().then(response => {
         if (response == 'granted') {
@@ -419,8 +384,52 @@ function onAnimLoop() {
     });
   }
 
-    getAccel()
   
+
+  
+
+
+  //scrollEvent()
+maus()
+
+function updateMesh(){
+  pos += scroll*0.1
+  //labelMesh.position.y = pos % window.innerHeight - window.innerHeight/2 +100
+  //mesh.position.y = pos % window.innerHeight - window.innerHeight/2 +100
+  number += (scroll*0.00028)
+}
+
+let premission = false
+let time = 0.05
+let pos = 0
+let scroll = 0
+let scrollTarget = 0
+let currentScroll = 0
+    let number = 0
+    let down = false
+function onAnimLoop() {
+
+  scroll += (scrollTarget - scroll) * 0.1
+  scroll *= 0.9
+  scrollTarget *= 0.9
+  currentScroll *= scroll * 0.01
+  
+  //move letter
+  updateMesh()
+
+ 
+
+
+  
+
+  document.querySelector("#accelPermsButton").addEventListener("click", (e)=>{
+    getAccel()
+    premission = true
+  })
+
+  if(premission){
+    getAccel()
+  }
 
   /*
   if(down){
