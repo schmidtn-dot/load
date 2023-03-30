@@ -378,6 +378,8 @@ function maus(){
     let left = position.left; 
     let right = position.right; 
     let bottom = position.bottom; 
+
+    document.querySelector(".text").innerText = e.touches[0].clientX 
        
     if(e.touches[0].clientX  > left && e.touches[0].clientX  < right && e.touches[0].clientY > top && e.touches[0].clientY < bottom) {
       // Mousemove element is inside the coordinates
