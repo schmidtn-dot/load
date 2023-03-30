@@ -120,7 +120,9 @@ const postFXMaterial = new THREE.ShaderMaterial({
     progress: { value: 0.99},
     rate: {value: 0.998},
     time : {value: 0},
-    rotationTime: {value: 0.001}
+    rotationTime: {value: 0.001},
+    orientationX: {value: 0.0},
+    orientationY: {value:0.0}
   },
   // vertex shader will be in charge of positioning our plane correctly
   vertexShader: `
@@ -151,7 +153,12 @@ const postFXMaterial = new THREE.ShaderMaterial({
       
       uniform float progress;
       uniform float time;
+      uniform float orientationX;
+      uniform float orientationY;
+
+
       varying vec2 v_uv;
+
       
        //	Simplex 3D Noise 
       //	by Ian McEwan, Ashima Arts
@@ -233,7 +240,7 @@ const postFXMaterial = new THREE.ShaderMaterial({
         //vec4 inputColor = texture2D(sampler, v_uv + vec2(.00));
           float a = snoise(vec3(v_uv * 5.1, time * 0.1)) * 0.0032;
         float b = snoise(vec3(v_uv * 5.1, time * 0.1 + 100.0)) * 0.0032;
-        vec4 inputColor = texture2D(sampler, v_uv + vec2(a * 0.05, b * 0.05) + vec2(0.0));
+        vec4 inputColor = texture2D(sampler, v_uv + vec2(a * 0.05, b * 0.05) + vec2(orientationX, orientationY));
       
         // Set the correct color of each pixel that makes up the plane
         gl_FragColor = vec4(inputColor * 1.0);
@@ -263,6 +270,52 @@ function scrollEvent(){
   document.addEventListener('mousewheel', (e) => {
     scrollTarget = e.wheelDeltaY*0.3;
   })
+}
+
+var px = 50; // Position x and y
+var py = 50;
+var vx = 0.0; // Velocity x and y
+var vy = 0.0;
+var updateRate = 1/60; // Sensor refresh rate
+
+function getAccel(){
+    DeviceMotionEvent.requestPermission().then(response => {
+        if (response == 'granted') {
+       // Add a listener to get smartphone orientation 
+           // in the alpha-beta-gamma axes (units in degrees)
+            window.addEventListener('deviceorientation',(event) => {
+                // Expose each orientation angle in a more readable way
+                rotation_degrees = event.alpha;
+                frontToBack_degrees = event.beta;
+                leftToRight_degrees = event.gamma;
+                
+                // Update velocity according to how tilted the phone is
+                // Since phones are narrower than they are long, double the increase to the x velocity
+                vx = vx + leftToRight_degrees * updateRate*2; 
+                vy = vy + frontToBack_degrees * updateRate;
+                
+                // Update position and clip it to bounds
+                px = px + vx*.5;
+                if (px > 98 || px < 0){ 
+                    px = Math.max(0, Math.min(98, px)) // Clip px between 0-98
+                    vx = 0;
+                }
+
+                py = py + vy*.5;
+                if (py > 98 || py < 0){
+                    py = Math.max(0, Math.min(98, py)) // Clip py between 0-98
+                    vy = 0;
+                }
+                
+                let x = ((px / window.innerWidth) * 2 - 1)
+                let y = ((1 - py / window.innerHeight) * 2 - 1) 
+                //document.querySelector(".number-text").innerText = "x: " + x + " y: " + y
+                postFXMesh.material.uniforms.orientationX.value = x
+                postFXMesh.material.uniforms.orientationX.value = y
+
+            });
+        }
+    });
 }
 
 function maus(){
