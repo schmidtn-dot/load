@@ -53,7 +53,10 @@ function getAccel(){
                 dot = document.getElementsByClassName("indicatorDot")[0]
                 dot.setAttribute('style', "left:" + (px) + "%;" +
                                               "top:" + (py) + "%;");
-                document.querySelector(".number-text").innerText = event.absolute + " " + event.alpha + " " + event.beta + " " + event.gamma
+
+                let x = ((px / innerWidth) * 2 - 1)
+                let y = ((1 - e.py / innerHeight) * 2 - 1) 
+                document.querySelector(".number-text").innerText = "x: " + x + " y: " + y
             });
         }
     });
