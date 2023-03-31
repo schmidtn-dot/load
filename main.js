@@ -315,8 +315,8 @@ function getAccel(){
                   vy = 0;
               }
               
-               x = ((px / window.innerWidth) * 2 - 1)
-               y = ((1 - py / window.innerHeight) * 2 - 1) 
+              let x = (px * 0.01 - 0.5) * 2
+              let y = (py * 0.01  - 0.5) * 2
               //document.querySelector(".number-text").innerText = "x: " + x + " y: " + y
               postFXMesh.material.uniforms.orientationX.value = x
               postFXMesh.material.uniforms.orientationX.value = y
