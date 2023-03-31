@@ -291,7 +291,7 @@ function getAccel(){
          // in the alpha-beta-gamma axes (units in degrees)
           window.addEventListener('deviceorientation',(event) => {
             document.querySelector(".text").innerText = event.alpha
-
+            postFXMesh.material.uniforms.rate.value = 0.997
               // Expose each orientation angle in a more readable way
               let rotation_degrees = event.alpha;
               let frontToBack_degrees = event.beta;
@@ -318,8 +318,8 @@ function getAccel(){
               let x = frontToBack_degrees * 0.01
               let y = leftToRight_degrees * 0.01
               //document.querySelector(".number-text").innerText = "x: " + x + " y: " + y
-              postFXMesh.material.uniforms.orientationX.value = y
-              postFXMesh.material.uniforms.orientationY.value = x
+              postFXMesh.material.uniforms.orientationX.value = y * -1
+              postFXMesh.material.uniforms.orientationY.value = x 
               document.querySelector(".text").innerText = "x " + x
             });
         
