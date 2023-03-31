@@ -292,7 +292,7 @@ function getAccel(){
          // in the alpha-beta-gamma axes (units in degrees)
           window.addEventListener('deviceorientation',(event) => {
 
-            postFXMesh.material.uniforms.rate.value = 0.995
+            postFXMesh.material.uniforms.rate.value = 1.005
               // Expose each orientation angle in a more readable way
               let rotation_degrees = event.alpha;
               let frontToBack_degrees = event.beta;
