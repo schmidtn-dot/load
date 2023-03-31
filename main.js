@@ -240,7 +240,7 @@ const postFXMaterial = new THREE.ShaderMaterial({
         //vec4 inputColor = texture2D(sampler, v_uv + vec2(.00));
           float a = snoise(vec3(v_uv * 5.1, time * 0.1)) * 0.0032;
         float b = snoise(vec3(v_uv * 5.1, time * 0.1 + 100.0)) * 0.0032;
-        vec4 inputColor = texture2D(sampler, v_uv + vec2(a * 0.05, b * 0.05) + vec2(orientationX, orientationY) * 0.006);
+        vec4 inputColor = texture2D(sampler, v_uv + vec2(a * 0.05, b * 0.05) + vec2(orientationX, orientationY) * 0.01);
       
         // Set the correct color of each pixel that makes up the plane
         gl_FragColor = vec4(inputColor * 1.0);
@@ -292,7 +292,7 @@ function getAccel(){
          // in the alpha-beta-gamma axes (units in degrees)
           window.addEventListener('deviceorientation',(event) => {
 
-            postFXMesh.material.uniforms.rate.value = 1.005
+            postFXMesh.material.uniforms.rate.value = 0.995
               // Expose each orientation angle in a more readable way
               let rotation_degrees = event.alpha;
               let frontToBack_degrees = event.beta;
