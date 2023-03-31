@@ -292,12 +292,12 @@ function getAccel(){
          // in the alpha-beta-gamma axes (units in degrees)
          document.querySelector(".text").innerText = "granted"
           window.addEventListener('deviceorientation',(event) => {
-              
               // Expose each orientation angle in a more readable way
               rotation_degrees = event.alpha;
               frontToBack_degrees = event.beta;
               leftToRight_degrees = event.gamma;
-              
+              document.querySelector(".text").innerText = event.alpha
+
               // Update velocity according to how tilted the phone is
               // Since phones are narrower than they are long, double the increase to the x velocity
               vx = vx + leftToRight_degrees * updateRate*2; 
