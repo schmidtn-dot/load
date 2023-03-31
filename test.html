@@ -49,6 +49,9 @@ function getAccel(){
                     py = Math.max(0, Math.min(98, py)) // Clip py between 0-98
                     vy = 0;
                 }
+                dot = document.getElementsByClassName("indicatorDot")[0]
+                dot.setAttribute('style', "left:" + (px) + "%;" +
+                                              "top:" + (py) + "%;");
                 
                 let x = (px * 0.01 - 0.5) * 2
                 let y = (py * 0.01  - 0.5) * 2
