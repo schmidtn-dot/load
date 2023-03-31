@@ -287,16 +287,16 @@ let y = 0
 function getAccel(){
   DeviceMotionEvent.requestPermission().then(response => {
       if (response == 'granted') {
-        alert("granted")
      // Add a listener to get smartphone orientation 
          // in the alpha-beta-gamma axes (units in degrees)
-         document.querySelector(".text").innerText = "granted"
           window.addEventListener('deviceorientation',(event) => {
+            document.querySelector(".text").innerText = "deviceorientation"
+            document.querySelector(".text").innerText = event.alpha
+
               // Expose each orientation angle in a more readable way
               rotation_degrees = event.alpha;
               frontToBack_degrees = event.beta;
               leftToRight_degrees = event.gamma;
-              document.querySelector(".text").innerText = event.alpha
 
               // Update velocity according to how tilted the phone is
               // Since phones are narrower than they are long, double the increase to the x velocity
