@@ -290,7 +290,6 @@ function getAccel(){
      // Add a listener to get smartphone orientation 
          // in the alpha-beta-gamma axes (units in degrees)
           window.addEventListener('deviceorientation',(event) => {
-            document.querySelector(".text").innerText = "deviceorientation"
             document.querySelector(".text").innerText = event.alpha
 
               // Expose each orientation angle in a more readable way
