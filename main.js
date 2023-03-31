@@ -287,6 +287,7 @@ let y = 0
 function getAccel(){
   DeviceMotionEvent.requestPermission().then(response => {
       if (response == 'granted') {
+        alert("granted")
      // Add a listener to get smartphone orientation 
          // in the alpha-beta-gamma axes (units in degrees)
          
