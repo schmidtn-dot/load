@@ -318,8 +318,8 @@ function getAccel(){
               let x = (px * 0.01 - 0.5) * 2
               let y = (py * 0.01  - 0.5) * 2
               //document.querySelector(".number-text").innerText = "x: " + x + " y: " + y
-              postFXMesh.material.uniforms.orientationX.value = x
               postFXMesh.material.uniforms.orientationX.value = y
+              postFXMesh.material.uniforms.orientationY.value = x
               document.querySelector(".text").innerText = "x " + x
             });
         
