@@ -118,7 +118,7 @@ const postFXMaterial = new THREE.ShaderMaterial({
   uniforms: {
     sampler: { value: null },
     progress: { value: 0.99},
-    rate: {value: 0.995},
+    rate: {value: 0.998},
     time : {value: 0},
     rotationTime: {value: 0.001},
     orientationX: {value: 0.0},
@@ -292,7 +292,7 @@ function getAccel(){
          // in the alpha-beta-gamma axes (units in degrees)
           window.addEventListener('deviceorientation',(event) => {
 
-            postFXMesh.material.uniforms.rate.value = 0.991
+            postFXMesh.material.uniforms.rate.value = 0.998
               // Expose each orientation angle in a more readable way
               let rotation_degrees = event.alpha;
               let frontToBack_degrees = event.beta;
@@ -356,7 +356,7 @@ function maus(){
       postFXMesh.material.uniforms.rotationTime.value = -0.003
     } else {
       mesh.material.map = texture
-      postFXMesh.material.uniforms.rate.value = 0.997
+      postFXMesh.material.uniforms.rate.value = 0.998
       postFXMesh.material.uniforms.rotationTime.value = 0.002
     }
 
@@ -384,11 +384,11 @@ function maus(){
     if(e.touches[0].clientX  > left && e.touches[0].clientX  < right && e.touches[0].clientY > top && e.touches[0].clientY < bottom) {
       // Mousemove element is inside the coordinates
       mesh.material.map = textureHand
-      postFXMesh.material.uniforms.rate.value = 1.005
-      postFXMesh.material.uniforms.rotationTime.value = -0.003
+      postFXMesh.material.uniforms.rate.value = 1.05
+      postFXMesh.material.uniforms.rotationTime.value = -0.009
     } else {
       mesh.material.map = texture
-      postFXMesh.material.uniforms.rate.value = 0.995
+      postFXMesh.material.uniforms.rate.value = 0.998
       postFXMesh.material.uniforms.rotationTime.value = 0.002
     }
     })
