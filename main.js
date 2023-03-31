@@ -240,7 +240,7 @@ const postFXMaterial = new THREE.ShaderMaterial({
         //vec4 inputColor = texture2D(sampler, v_uv + vec2(.00));
           float a = snoise(vec3(v_uv * 5.1, time * 0.1)) * 0.0032;
         float b = snoise(vec3(v_uv * 5.1, time * 0.1 + 100.0)) * 0.0032;
-        vec4 inputColor = texture2D(sampler, v_uv + vec2(a * 0.05, b * 0.05) + vec2(orientationX, orientationY) * 2.0);
+        vec4 inputColor = texture2D(sampler, v_uv + vec2(a * 0.05, b * 0.05) + vec2(orientationX, orientationY) * 0.005);
       
         // Set the correct color of each pixel that makes up the plane
         gl_FragColor = vec4(inputColor * 1.0);
@@ -320,7 +320,7 @@ function getAccel(){
               //document.querySelector(".number-text").innerText = "x: " + x + " y: " + y
               postFXMesh.material.uniforms.orientationX.value = x
               postFXMesh.material.uniforms.orientationX.value = y
-              document.querySelector(".text").innerText = "x " + x
+              //document.querySelector(".text").innerText = "x " + x
             });
         
          
