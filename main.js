@@ -316,8 +316,8 @@ function getAccel(){
                   vy = 0;
               }
               
-              let x = frontToBack_degrees * 0.005
-              let y = leftToRight_degrees * 0.005
+              let x = frontToBack_degrees * 0.01
+              let y = leftToRight_degrees * 0.01
               //document.querySelector(".number-text").innerText = "x: " + x + " y: " + y
               postFXMesh.material.uniforms.orientationX.value = y * -1
               postFXMesh.material.uniforms.orientationY.value = x 
