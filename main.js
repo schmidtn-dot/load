@@ -428,8 +428,7 @@ function onAnimLoop() {
   //move letter
   updateMesh()
 
-  postFXMesh.material.uniforms.orientationX.value += 0.001
-  postFXMesh.material.uniforms.orientationX.value += 0.001
+
 
 
   
