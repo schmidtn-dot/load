@@ -319,8 +319,8 @@ function getAccel(){
               let x = frontToBack_degrees * 0.01
               let y = leftToRight_degrees * 0.01
               //document.querySelector(".number-text").innerText = "x: " + x + " y: " + y
-              postFXMesh.material.uniforms.orientationX.value = y 
-              postFXMesh.material.uniforms.orientationY.value = x * -1
+              postFXMesh.material.uniforms.orientationX.value = y * -1
+              postFXMesh.material.uniforms.orientationY.value = x 
             });
         
          
@@ -384,8 +384,8 @@ function maus(){
     if(e.touches[0].clientX  > left && e.touches[0].clientX  < right && e.touches[0].clientY > top && e.touches[0].clientY < bottom) {
       // Mousemove element is inside the coordinates
       mesh.material.map = textureHand
-      postFXMesh.material.uniforms.rate.value = 1.05
-      postFXMesh.material.uniforms.rotationTime.value = -0.009
+      postFXMesh.material.uniforms.rate.value = 1.005
+      postFXMesh.material.uniforms.rotationTime.value = -0.003
     } else {
       mesh.material.map = texture
       postFXMesh.material.uniforms.rate.value = 0.998
