@@ -118,7 +118,7 @@ const postFXMaterial = new THREE.ShaderMaterial({
   uniforms: {
     sampler: { value: null },
     progress: { value: 0.99},
-    rate: {value: 0.998},
+    rate: {value: 0.995},
     time : {value: 0},
     rotationTime: {value: 0.001},
     orientationX: {value: 0.0},
@@ -388,7 +388,7 @@ function maus(){
       postFXMesh.material.uniforms.rotationTime.value = -0.003
     } else {
       mesh.material.map = texture
-      postFXMesh.material.uniforms.rate.value = 0.997
+      postFXMesh.material.uniforms.rate.value = 0.995
       postFXMesh.material.uniforms.rotationTime.value = 0.002
     }
     })
