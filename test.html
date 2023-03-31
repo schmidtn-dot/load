@@ -50,9 +50,9 @@ function getAccel(){
                     vy = 0;
                 }
                 
-                let x = ((px / window.innerWidth) * 2 - 1)
-                let y = ((1 - py / window.innerHeight) * 2 - 1) 
-                document.querySelector(".number-text").innerText = "px: " + px + " py: " + py
+                let x = px * 0.01 - 0.5
+                let y = py * 0.01  - 0.5
+                document.querySelector(".number-text").innerText = "x: " + x + " y: " + y
             });
         }
     });
