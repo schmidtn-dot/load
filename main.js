@@ -320,7 +320,7 @@ function getAccel(){
               //document.querySelector(".number-text").innerText = "x: " + x + " y: " + y
               postFXMesh.material.uniforms.orientationX.value = x
               postFXMesh.material.uniforms.orientationX.value = y
-              //document.querySelector(".text").innerText = "x " + x
+              document.querySelector(".text").innerText = "x " + x
             });
         
          
