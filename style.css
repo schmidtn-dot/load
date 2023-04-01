@@ -42,8 +42,7 @@
       bottom: 15px
     }
   
-    #accelPermsButton{
-      display: none;
+    #accelPermsButton:{
       padding: 11px 15px;
       border-radius: 20px;
       border: none;
