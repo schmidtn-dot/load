@@ -1,9 +1,9 @@
 console.clear()
 
 setTimeout(()=>{
-  if (typeof screen.orientation == "undefined") {
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     document.querySelector("##accelPermsButton").style.display = "block"
-    document.querySelector("##accelPermsButton").style.opacity = 1
+    document.querySelector("##accelPermsButton").style.opacity = "1"
   }
 },4000)
 
