@@ -1,5 +1,12 @@
 console.clear()
 
+setTimeout(()=>{
+  if (typeof screen.orientation == "undefined") {
+    document.querySelector("##accelPermsButton").style.display = "block"
+    document.querySelector("##accelPermsButton").style.opacity = 1
+  }
+},4000)
+
 let LABEL_TEXT = 'das eigentliche und das uneigentliche'
 
 const clock = new THREE.Clock()
