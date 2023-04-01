@@ -43,13 +43,14 @@
     }
   
     #accelPermsButton{
-    /* height: 50px; */
-    padding: 11px 15px;
-    border-radius: 20px;
-    border: none;
-    background-size: 120% 120%;
-    color: #000;
-    position: absolute;
-    bottom: 20px;
-    right: 30px;
+      padding: 11px 15px;
+      border-radius: 20px;
+      border: none;
+      background-size: 120% 120%;
+      color: #000;
+      position: absolute;
+      bottom: 25%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      position: absolute;
     }
