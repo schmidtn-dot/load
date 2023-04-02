@@ -9,7 +9,6 @@ window.mobileAndTabletCheck = function() {
   if (window.mobileAndTabletCheck()) {
     setTimeout(()=>{
       console.log("mobile")
-
       document.querySelector("#accelPermsButton").style.display = "flex"
       document.querySelector("#accelPermsButton").style.opacity  = 1
       },4000)
@@ -18,7 +17,7 @@ window.mobileAndTabletCheck = function() {
   }
 
 
-let LABEL_TEXT = 'das eigentliche und das uneigentliche'
+let LABEL_TEXT = 'Nick Schmidt'
 
 const clock = new THREE.Clock()
 const scene = new THREE.Scene()
@@ -101,7 +100,7 @@ let labelMaterial = new THREE.MeshBasicMaterial({
 })
 // Create a plane mesh, add it to the scene
 const labelMesh = new THREE.Mesh(labelGeometry, labelMaterial)
-//scene.add(labelMesh)
+scene.add(labelMesh)
 
 //add image 
 //const geometryImg = new THREE.PlaneBufferGeometry(50, 50);
