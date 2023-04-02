@@ -138,11 +138,18 @@ videoTexture.minFilter = THREE.LinearFilter;
 videoTexture.magFilter = THREE.LinearFilter;
 videoTexture.format = THREE.RGBAFormat;
 
+const invertedAlphaChannel = new THREE.DataTexture(
+  videoTexture.image.data.map(alpha => 255 - alpha),
+  videoTexture.image.width,
+  videoTexture.image.height,
+  THREE.AlphaFormat
+);
+
 const videoGeometry = new THREE.PlaneBufferGeometry(window.innerWidth - 500, window.innerHeight - 500);
 
 const videoMaterial = new THREE.MeshBasicMaterial({
-  map: videoTexture,
-  alphaMap: videoTexture,
+  map: invertedAlphaChannel,
+  alphaMap: invertedAlphaChannel,
   transparent: true
 });
 
