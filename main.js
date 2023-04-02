@@ -11,6 +11,7 @@ setTimeout(()=>{
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
   console.log("mobile")
   document.querySelector("#accelPermsButton").style.display = "flex"
+  document.querySelector("#accelPermsButton").style.opacity  = 1
 }else{
   console.log("not mobile")
 }
