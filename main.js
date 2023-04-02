@@ -41,7 +41,7 @@ let renderBufferB = new THREE.WebGLRenderTarget(
 // 2. Set default background color
 // 3. Append it to the page
 const renderer = new THREE.WebGLRenderer()
-renderer.setClearColor(0x000000, 1);
+renderer.setClearColor(0xff0000)
 renderer.setClearAlpha(0)
 renderer.setSize(innerWidth, innerHeight)
 renderer.setPixelRatio(devicePixelRatio || 1)
@@ -72,23 +72,23 @@ let fontColor= "white"
 let labelTextureCanvas;
 {
   // Canvas and corresponding context2d to be used for drawing the text
-  labelTextureCanvas = document.createElement("canvas");
-  const labelTextureCtx = labelTextureCanvas.getContext("2d");
+  labelTextureCanvas = document.createElement("canvas")
+  const labelTextureCtx = labelTextureCanvas.getContext("2d")
   // Dynamic texture size based on the device capabilities
-  const textureSize = Math.min(renderer.capabilities.maxTextureSize, 2048);
-  const relativeFontSize = 300;
+  const textureSize = Math.min(renderer.capabilities.maxTextureSize, 2048)
+  const relativeFontSize = 300
   // Size our text canvas
-  labelTextureCanvas.width = textureSize;
-  labelTextureCanvas.height = textureSize;
-  labelTextureCtx.textAlign = "center";
-  labelTextureCtx.textBaseline = "middle";
+  labelTextureCanvas.width = textureSize
+  labelTextureCanvas.height = textureSize
+  labelTextureCtx.textAlign = "center"
+  labelTextureCtx.textBaseline = "middle"
   // Dynamic font size based on the texture size (based on the device capabilities)
-  labelTextureCtx.font = `${relativeFontSize}px Helvetica`;
-  const textWidth = labelTextureCtx.measureText(LABEL_TEXT).width;
-  const widthDelta = labelTextureCanvas.width / textWidth;
-  const fontSize = relativeFontSize * widthDelta;
-  labelTextureCtx.font = `${fontSize}px Helvetica`;
-  labelTextureCtx.fillStyle = "white";
+  labelTextureCtx.font = `${relativeFontSize}px Helvetica`
+  const textWidth = labelTextureCtx.measureText(LABEL_TEXT).width
+  const widthDelta = labelTextureCanvas.width / textWidth
+  const fontSize = relativeFontSize * widthDelta
+  labelTextureCtx.font = `${fontSize}px Helvetica`
+  labelTextureCtx.fillStyle = 'white'
   labelTextureCtx.fillText(
     LABEL_TEXT,
     labelTextureCanvas.width / 2,
