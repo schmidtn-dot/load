@@ -143,14 +143,13 @@ const videoGeometry = new THREE.PlaneBufferGeometry(window.innerWidth - 100, win
 const videoMaterial = new THREE.MeshBasicMaterial({
   map: videoTexture,
   alphaMap: videoTexture,
-  alphaMapInverse: true,
   transparent: true
 });
 
 const videoMesh = new THREE.Mesh(videoGeometry, videoMaterial);
 
 if (window.location.href.indexOf("orientation") > -1) {
-  videoMesh.material.opacity = 1
+  videoMesh.material.opacity = 0.2
   scene.add(videoMesh);
 } 
  
