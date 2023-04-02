@@ -9,6 +9,12 @@ setTimeout(()=>{
   }
 },4000)
 
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+console.log("mobile")
+}else{
+  console.log("not mobile")
+}
+
 let LABEL_TEXT = 'das eigentliche und das uneigentliche'
 
 const clock = new THREE.Clock()
