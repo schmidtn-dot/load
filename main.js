@@ -149,7 +149,7 @@ const videoMaterial = new THREE.MeshBasicMaterial({
 const videoMesh = new THREE.Mesh(videoGeometry, videoMaterial);
 
 if (window.location.href.indexOf("orientation") > -1) {
-  videoMesh.material.opacity = 0.2
+  videoMesh.material.opacity = 0.05
   scene.add(videoMesh);
 } 
  
