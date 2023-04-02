@@ -142,6 +142,7 @@ const videoGeometry = new THREE.PlaneBufferGeometry(window.innerWidth - 100, win
 
 const videoMaterial = new THREE.MeshBasicMaterial({
   map: videoTexture,
+  alphaMap: videoTexture,
   transparent: true
 });
 
