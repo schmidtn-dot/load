@@ -126,6 +126,17 @@ const materialImg = new THREE.MeshBasicMaterial({
 });
 const mesh = new THREE.Mesh( geometryImg, materialImg );
 scene.add( mesh );
+
+//VIDEO
+var video = document.querySelector("video")
+video.load(); 
+video.play();
+
+console.log(video)
+var videoTexture = new THREE.VideoTexture( video);
+	videoTexture.minFilter = THREE.LinearFilter;
+	videoTexture.magFilter = THREE.LinearFilter;
+videoTexture.format = THREE.RGBAFormat;
  
 
 
