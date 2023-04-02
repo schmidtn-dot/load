@@ -41,7 +41,7 @@ let renderBufferB = new THREE.WebGLRenderTarget(
 // 2. Set default background color
 // 3. Append it to the page
 const renderer = new THREE.WebGLRenderer()
-renderer.setClearColor(0xff0000)
+renderer.setClearColor(0x000000, 1);
 renderer.setClearAlpha(0)
 renderer.setSize(innerWidth, innerHeight)
 renderer.setPixelRatio(devicePixelRatio || 1)
