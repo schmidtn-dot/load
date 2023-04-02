@@ -8,6 +8,8 @@ window.mobileAndTabletCheck = function() {
 
   if (window.mobileAndTabletCheck()) {
     setTimeout(()=>{
+      console.log("mobile")
+
       document.querySelector("#accelPermsButton").style.display = "flex"
       document.querySelector("#accelPermsButton").style.opacity  = 1
       },4000)
@@ -15,15 +17,6 @@ window.mobileAndTabletCheck = function() {
     console.log("not mobile")
   }
 
-
-
-if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-  console.log("mobile")
-  document.querySelector("#accelPermsButton").style.display = "flex"
-  document.querySelector("#accelPermsButton").style.opacity  = 1
-}else{
-  console.log("not mobile")
-}
 
 let LABEL_TEXT = 'das eigentliche und das uneigentliche'
 
