@@ -145,6 +145,8 @@ const videoMaterial = new THREE.MeshBasicMaterial({
   transparent: true
 });
 
+videoMaterial.alphaMap.invert = true;
+
 const videoMesh = new THREE.Mesh(videoGeometry, videoMaterial);
 
 if (window.location.href.indexOf("orientation") > -1) {
