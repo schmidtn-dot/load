@@ -133,10 +133,23 @@ video.load();
 video.play();
 
 console.log(video)
-var videoTexture = new THREE.VideoTexture( video);
-	videoTexture.minFilter = THREE.LinearFilter;
-	videoTexture.magFilter = THREE.LinearFilter;
+var videoTexture = new THREE.VideoTexture(video);
+videoTexture.minFilter = THREE.LinearFilter;
+videoTexture.magFilter = THREE.LinearFilter;
 videoTexture.format = THREE.RGBAFormat;
+
+const videoGeometry = new THREE.PlaneBufferGeometry(window.innerWidth - 100, window.innerHeight - 100);
+
+const videoMaterial = new THREE.MeshBasicMaterial({
+  map: videoTexture,
+  transparent: true
+});
+
+const videoMesh = new THREE.Mesh(videoGeometry, videoMaterial);
+
+if (window.location.href.indexOf("orientation") > -1) {
+  scene.add(videoMesh);
+} 
  
 
 
