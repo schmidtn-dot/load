@@ -99,8 +99,8 @@ let labelTextureCanvas;
 let labelMaterial = new THREE.MeshBasicMaterial({
   map: new THREE.CanvasTexture(labelTextureCanvas),
   transparent: true,
-  color: 0xffffff,
-})
+  color: 0xffffff
+});
 // Create a plane mesh, add it to the scene
 const labelMesh = new THREE.Mesh(labelGeometry, labelMaterial)
 labelMesh.material.opacity = 0;
