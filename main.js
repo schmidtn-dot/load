@@ -132,24 +132,16 @@ var video = document.querySelector("video")
 video.load(); 
 video.play();
 
-console.log(video)
 var videoTexture = new THREE.VideoTexture(video);
 videoTexture.minFilter = THREE.LinearFilter;
 videoTexture.magFilter = THREE.LinearFilter;
 videoTexture.format = THREE.RGBAFormat;
 
-const invertedAlphaChannel = new THREE.DataTexture(
-  videoTexture.image.data.map(alpha => 255 - alpha),
-  videoTexture.image.width,
-  videoTexture.image.height,
-  THREE.AlphaFormat
-);
-
 const videoGeometry = new THREE.PlaneBufferGeometry(window.innerWidth - 500, window.innerHeight - 500);
 
 const videoMaterial = new THREE.MeshBasicMaterial({
-  map: invertedAlphaChannel,
-  alphaMap: invertedAlphaChannel,
+  map: videoTexture,
+  alphaMap: videoTexture,
   transparent: true
 });
 
