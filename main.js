@@ -20,7 +20,7 @@ window.mobileAndTabletCheck = function() {
   document.querySelector("#accelPermsButton").style.opacity  = 1
 
 
-let LABEL_TEXT = 'Nick Schmidt'
+let LABEL_TEXT = 'hello'
 
 const clock = new THREE.Clock()
 const scene = new THREE.Scene()
@@ -70,7 +70,7 @@ orthoCamera.lookAt(new THREE.Vector3(0, 0, 0))
 const labelMeshSize = innerWidth > innerHeight ? innerHeight : innerWidth
 const labelGeometry = new THREE.PlaneBufferGeometry(labelMeshSize, labelMeshSize)
 
-let fontColor= "black"
+let fontColor= "white"
 
 // Programmaticaly create a texture that will hold the text
 let labelTextureCanvas
@@ -103,7 +103,8 @@ let labelMaterial = new THREE.MeshBasicMaterial({
 })
 // Create a plane mesh, add it to the scene
 const labelMesh = new THREE.Mesh(labelGeometry, labelMaterial)
-//scene.add(labelMesh)
+labelMesh.material.opacity = 0;
+scene.add(labelMesh)
 
 //add image 
 //const geometryImg = new THREE.PlaneBufferGeometry(50, 50);
@@ -371,10 +372,12 @@ function maus(){
     
     if(e.x  > left && e.x < right && e.y > top && e.y < bottom) {
       // Mousemove element is inside the coordinates
+      labelMesh.material.opacity = 1;
       mesh.material.map = textureHand
       postFXMesh.material.uniforms.rate.value = 1.005
       postFXMesh.material.uniforms.rotationTime.value = -0.003
     } else {
+      labelMesh.material.opacity = 0;
       mesh.material.map = texture
       postFXMesh.material.uniforms.rate.value = 0.998
       postFXMesh.material.uniforms.rotationTime.value = 0.002
