@@ -16,6 +16,9 @@ window.mobileAndTabletCheck = function() {
     console.log("not mobile")
   }
 
+  document.querySelector("#accelPermsButton").style.display = "flex"
+  document.querySelector("#accelPermsButton").style.opacity  = 1
+
 
 let LABEL_TEXT = 'Nick Schmidt'
 
@@ -100,7 +103,7 @@ let labelMaterial = new THREE.MeshBasicMaterial({
 })
 // Create a plane mesh, add it to the scene
 const labelMesh = new THREE.Mesh(labelGeometry, labelMaterial)
-scene.add(labelMesh)
+//scene.add(labelMesh)
 
 //add image 
 //const geometryImg = new THREE.PlaneBufferGeometry(50, 50);
