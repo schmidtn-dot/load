@@ -2,7 +2,6 @@ console.clear()
 
 setTimeout(()=>{
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    document.querySelector("#accelPermsButton").style.display = "flex"
     //document.querySelector("#accelPermsButton").style.opacity = 1
   } else { 
     console.log("not mobile")
@@ -10,7 +9,7 @@ setTimeout(()=>{
 },4000)
 
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-console.log("mobile")
+  document.querySelector("#accelPermsButton").style.display = "flex"
 }else{
   console.log("not mobile")
 }
