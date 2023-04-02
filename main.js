@@ -138,7 +138,7 @@ videoTexture.minFilter = THREE.LinearFilter;
 videoTexture.magFilter = THREE.LinearFilter;
 videoTexture.format = THREE.RGBAFormat;
 
-const videoGeometry = new THREE.PlaneBufferGeometry(window.innerWidth - 100, window.innerHeight - 100);
+const videoGeometry = new THREE.PlaneBufferGeometry(window.innerWidth - 500, window.innerHeight - 500);
 
 const videoMaterial = new THREE.MeshBasicMaterial({
   map: videoTexture,
