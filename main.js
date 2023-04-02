@@ -104,7 +104,7 @@ let labelMaterial = new THREE.MeshBasicMaterial({
 // Create a plane mesh, add it to the scene
 const labelMesh = new THREE.Mesh(labelGeometry, labelMaterial)
 labelMesh.material.opacity = 0;
-scene.add(labelMesh)
+//scene.add(labelMesh)
 
 //add image 
 //const geometryImg = new THREE.PlaneBufferGeometry(50, 50);
