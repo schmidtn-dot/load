@@ -6,20 +6,16 @@ window.mobileAndTabletCheck = function() {
   return check;
 };
 
-console.log(window.mobileAndTabletCheck())
-console.log(window.mobileAndTabletCheck)
-
-
-  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    //document.querySelector("#accelPermsButton").style.opacity = 1
+  if (window.mobileAndTabletCheck()) {
+    setTimeout(()=>{
+      document.querySelector("#accelPermsButton").style.display = "flex"
+      document.querySelector("#accelPermsButton").style.opacity  = 1
+      },4000)
   } else { 
     console.log("not mobile")
   }
 
-setTimeout(()=>{
-document.querySelector("#accelPermsButton").style.display = "flex"
-document.querySelector("#accelPermsButton").style.opacity  = 1
-},4000)
+
 
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
   console.log("mobile")
