@@ -150,7 +150,7 @@ videoMaterial.alphaMap.invert = true;
 const videoMesh = new THREE.Mesh(videoGeometry, videoMaterial);
 
 if (window.location.href.indexOf("orientation") > -1) {
-  videoMesh.material.opacity = 0.5
+  videoMesh.material.opacity = 1
   scene.add(videoMesh);
 } 
  
