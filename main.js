@@ -88,7 +88,7 @@ let labelTextureCanvas;
   const widthDelta = labelTextureCanvas.width / textWidth
   const fontSize = relativeFontSize * widthDelta
   labelTextureCtx.font = `${fontSize}px Helvetica`
-  labelTextureCtx.fillStyle = 'white'
+  labelTextureCtx.fillStyle = 'blue'
   labelTextureCtx.fillText(
     LABEL_TEXT,
     labelTextureCanvas.width / 2,
