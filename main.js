@@ -8,7 +8,7 @@ setTimeout(()=>{
   }
 },4000)
 
-if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+if(navigator.userAgentData.mobile){
   console.log("mobile")
   document.querySelector("#accelPermsButton").style.display = "flex"
   document.querySelector("#accelPermsButton").style.opacity  = 1
