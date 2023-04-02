@@ -10,7 +10,7 @@ if(typeof DeviceMotionEvent.requestPermission === 'function') {
       console.log("mobile")
       document.querySelector("#accelPermsButton").style.display = "flex"
       document.querySelector("#accelPermsButton").style.opacity  = 1
-      },4000)
+      },8000)
   } else { 
     console.log("not mobile")
   }
@@ -69,27 +69,31 @@ const labelGeometry = new THREE.PlaneBufferGeometry(labelMeshSize, labelMeshSize
 let fontColor= "white"
 
 // Programmaticaly create a texture that will hold the text
-let labelTextureCanvas
+let labelTextureCanvas;
 {
   // Canvas and corresponding context2d to be used for drawing the text
-  labelTextureCanvas = document.createElement('canvas')
-  const labelTextureCtx = labelTextureCanvas.getContext('2d')
+  labelTextureCanvas = document.createElement("canvas");
+  const labelTextureCtx = labelTextureCanvas.getContext("2d");
   // Dynamic texture size based on the device capabilities
-  const textureSize = Math.min(renderer.capabilities.maxTextureSize, 2048)
-  const relativeFontSize = 300
+  const textureSize = Math.min(renderer.capabilities.maxTextureSize, 2048);
+  const relativeFontSize = 300;
   // Size our text canvas
-  labelTextureCanvas.width = textureSize
-  labelTextureCanvas.height = textureSize
-  labelTextureCtx.textAlign = 'center'
-  labelTextureCtx.textBaseline = 'middle'
+  labelTextureCanvas.width = textureSize;
+  labelTextureCanvas.height = textureSize;
+  labelTextureCtx.textAlign = "center";
+  labelTextureCtx.textBaseline = "middle";
   // Dynamic font size based on the texture size (based on the device capabilities)
-  labelTextureCtx.font = `${relativeFontSize}px Helvetica`
-  const textWidth = labelTextureCtx.measureText(LABEL_TEXT).width
-  const widthDelta = labelTextureCanvas.width / textWidth 
-  const fontSize = relativeFontSize * widthDelta 
-  labelTextureCtx.font = `${fontSize}px Helvetica`
-  labelTextureCtx.fillStyle = "blue"
-  labelTextureCtx.fillText(LABEL_TEXT, labelTextureCanvas.width / 2, labelTextureCanvas.height / 2)
+  labelTextureCtx.font = `${relativeFontSize}px Helvetica`;
+  const textWidth = labelTextureCtx.measureText(LABEL_TEXT).width;
+  const widthDelta = labelTextureCanvas.width / textWidth;
+  const fontSize = relativeFontSize * widthDelta;
+  labelTextureCtx.font = `${fontSize}px Helvetica`;
+  labelTextureCtx.fillStyle = "white";
+  labelTextureCtx.fillText(
+    LABEL_TEXT,
+    labelTextureCanvas.width / 2,
+    labelTextureCanvas.height / 2
+  );
 }
 // Create a material with our programmaticaly created text texture as input
 let labelMaterial = new THREE.MeshBasicMaterial({
