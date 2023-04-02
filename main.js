@@ -481,13 +481,13 @@ function onAnimLoop() {
     document.querySelector(".mail").addEventListener("mouseleave", (e)=>{
     mesh.material.map = texture
   })
-  */
+
   
    document.addEventListener("click", (e)=>{
      mesh.material.map == textureMaus ? (mesh.material.map = texture) :
    ( mesh.material.map = textureMaus)
   })
-  
+    */
   mesh.rotation.z -= 0.1
   number = 0
  // mesh.position.y += 80
