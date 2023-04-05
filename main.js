@@ -1,7 +1,7 @@
 console.clear()
 
-if (window.navigator.language !== "de" && window.location.pathname !== "/en.html") {
-  window.location.href = "/en.html";
+if (window.navigator.language !== "de-DE" && window.location.pathname !== "/en" || window.location.pathname !== "/en.html") {
+  window.location.href = "/en";
 }
 
 window.mobileAndTabletCheck = function() {
