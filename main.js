@@ -1,6 +1,6 @@
 console.clear()
 
-if (window.navigator.language !== "de-DE" && window.location.pathname !== "/en" || window.location.pathname !== "/en.html") {
+if (window.navigator.language !== "de-DE" && window.location.pathname !== "/en" ) {
   window.location.href = "/en";
 }
 
