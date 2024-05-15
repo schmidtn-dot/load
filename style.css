@@ -43,8 +43,16 @@
     
     .mail{
       position: absolute;
-      bottom: 15px
+      bottom: 15px;
+      padding: 20px;
     }
+
+	a h2{
+      background: none;
+      color: #fff;
+      padding: 0px;
+      font-weight: normal;
+	}
   
     #accelPermsButton{
       padding: 11px 15px;
