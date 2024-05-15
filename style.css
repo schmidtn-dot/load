@@ -5,6 +5,10 @@
     overscroll-behavior: none;
     }
 
+	a, u {
+  text-decoration: none;
+}
+
     body{
         background: #000;
         position: fixed;
