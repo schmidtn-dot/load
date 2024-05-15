@@ -47,10 +47,10 @@
       padding: 20px;
     }
 
-	a h2{
+	.mail a h2{
       background: none;
       color: #fff;
-      padding: 0px;
+      padding: 0px !important;
       font-weight: normal;
 	}
   
